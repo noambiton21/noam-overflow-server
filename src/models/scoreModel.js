@@ -7,10 +7,11 @@ const httpStatuses = config.httpStatuses;
 const addScore = async (req, res) => {
   const body = req.body;
 
-  const { createdBy, answerId, newScore } = body;
+  const { answerId, newScore } = body;
+  const userId = req.user.id;
 
   const scoreExists = await ScoreModel.findOne({
-    createdBy,
+    createdBy: userId,
     answerId,
   });
 
@@ -19,7 +20,7 @@ const addScore = async (req, res) => {
   } else {
     const score = await ScoreModel.create({
       answerId,
-      createdBy,
+      createdBy: userId,
     });
 
     if (score) {
