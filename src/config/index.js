@@ -1,6 +1,5 @@
 const config = {
-  mongo_url:
-    "mongodb+srv://noambiton21:963963@noamoverflowcluster.xenxfxi.mongodb.net/?retryWrites=true&w=majority",
+  mongo_url: "",
   expressPort: process.env.SERVER_PORT || 7000,
   httpStatuses: {
     created: 201,
