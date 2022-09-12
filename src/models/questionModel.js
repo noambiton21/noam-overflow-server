@@ -15,6 +15,7 @@ const createQuestion = async (req, res) => {
     content,
     tags,
     createdBy: req.user.id,
+    createdByEmail: req.user.email,
   });
 
   if (question) {
@@ -59,6 +60,7 @@ const getQuestions = async (req, res) => {
   const filter = req.query.filter || "";
 
   const questions = await QuestionModel.find({}).populate("answers");
+
   if (questions) {
     const filteredQuestions = questions.filter((question) =>
       question.title.toLowerCase().includes(filter.toString().toLowerCase())

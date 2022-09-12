@@ -1,5 +1,6 @@
 const config = {
-  mongo_url: process.env.MONGO_URL || "mongodb://localhost:27017/IVOverflow",
+  mongo_url:
+    "mongodb+srv://noambiton21:963963@noamoverflowcluster.xenxfxi.mongodb.net/?retryWrites=true&w=majority",
   expressPort: process.env.SERVER_PORT || 7000,
   httpStatuses: {
     created: 201,

@@ -7,6 +7,7 @@ const QuestionSchema = new Schema(
     tags: [String],
     answers: [{ type: Schema.Types.ObjectId, ref: "Answer", default: [] }],
     createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    createdByEmail: { type: String, required: true },
 
     protocol: {
       type: String,
