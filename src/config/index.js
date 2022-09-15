@@ -1,5 +1,5 @@
 const config = {
-  expressPort: process.env.SERVER_PORT || 8000,
+  expressPort: 7000,
   httpStatuses: {
     created: 201,
     ok: 200,
