@@ -12,7 +12,7 @@ const server = async () => {
   const app = express();
   app.use(cors({ "Access-Control-Allow-Origin": "*" }));
   app.use(express.json());
-  await connectDB(config.mongo_url);
+  await connectDB(process.env.mongo_url);
   app.use("/login", authController);
   app.all("/api/*", verifyJwt);
   applyRouteMiddleware(app);
@@ -35,7 +35,7 @@ const endServer = async (app) => {
     console.log(`Ended server listening on port ${config.expressPort}`)
   );
 
-  await disconnectDB(config.mongo_url);
+  await disconnectDB(process.mongo_url);
 };
 
 module.exports = { server, startServer, endServer };

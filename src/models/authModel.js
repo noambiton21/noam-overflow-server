@@ -19,7 +19,7 @@ const login = async (req, res) => {
       {
         id: user._id.toString(),
       },
-      "noam-secret"
+      process.env.jwt_secret
     );
     return res.status(httpStatuses.ok).send({ data: token });
   } else {

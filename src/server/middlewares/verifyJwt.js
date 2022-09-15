@@ -8,7 +8,7 @@ const UserModel = require("../../database/schemas/userSchema");
 const verifyJwt = async (req, res, next) => {
   try {
     let token = req.headers["authorization"];
-    const decodedJwt = jwt.verify(token, "noam-secret");
+    const decodedJwt = jwt.verify(token, process.env.jwt_secret);
     const user = await UserModel.findById(decodedJwt.id);
     if (!user) {
       res.status(httpStatuses.unauthorized);

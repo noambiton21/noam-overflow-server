@@ -1,6 +1,5 @@
 const config = {
-  mongo_url: "",
-  expressPort: process.env.SERVER_PORT || 7000,
+  expressPort: process.env.SERVER_PORT || 8000,
   httpStatuses: {
     created: 201,
     ok: 200,

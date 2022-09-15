@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const connectDB = async (databasePath) => {
-  console.log("db path: ");
-  console.log(databasePath);
   try {
     await mongoose.connect(databasePath, {
       useNewUrlParser: true,
@@ -12,7 +10,7 @@ const connectDB = async (databasePath) => {
     console.error(`Cannot connect to db : ${error}.`);
     return;
   }
-  console.log(`Connected to database at ${databasePath} successfully.`);
+  console.log(`Connected to database successfully.`);
 };
 
 const disconnectDB = async (databasePath) => {
@@ -22,7 +20,7 @@ const disconnectDB = async (databasePath) => {
     console.error(`Cannot disconnect to db : ${error}.`);
     return;
   }
-  console.log(`Disconnected from database at ${databasePath} successfully.`);
+  console.log(`Disconnected from database successfully.`);
 };
 
 module.exports = { connectDB, disconnectDB };
