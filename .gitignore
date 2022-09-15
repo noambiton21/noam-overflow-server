@@ -2,4 +2,4 @@ node_modules
 .vscode
 .prettierrc.js
 .env
-/src/vars.env
+/src/config/vars.env
